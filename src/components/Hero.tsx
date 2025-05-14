@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -28,17 +27,19 @@ const Hero = () => {
         <div className={`transition-all duration-700 ${loaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
           <p className="inline-block px-3 py-1 text-sm bg-electric/20 text-electric rounded-full mb-4">Welcome to my portfolio</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 transition-all">
-            <div className="overflow-hidden h-[4.5rem] md:h-[5.5rem] lg:h-[7rem]">
-              <div 
-                className="transition-transform duration-500"
-                style={{ transform: `translateY(-${roleIndex * 100}%)` }}
-              >
-                {roles.map((role, index) => (
-                  <div key={index} className="h-[4.5rem] md:h-[5.5rem] lg:h-[7rem] flex items-center justify-center">
-                    <span>{role}</span>
-                  </div>
-                ))}
-              </div>
+            <div className="relative h-[4.5rem] md:h-[5.5rem] lg:h-[7rem] overflow-hidden">
+              {roles.map((role, index) => (
+                <div 
+                  key={index} 
+                  className={`absolute w-full transition-all duration-500 ${
+                    index === roleIndex 
+                      ? "opacity-100 translate-y-0" 
+                      : "opacity-0 translate-y-8"
+                  }`}
+                >
+                  <span>{role}</span>
+                </div>
+              ))}
             </div>
             <span className="block text-electric mt-2">Turning Ideas Into Reality</span>
           </h1>

@@ -1,25 +1,20 @@
 
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-
+import junaidAvatar from '../../public/Junaid.jpg';
+import AKPNG from '../../public/AK.png'
 const Testimonials = () => {
   const testimonials = [
     {
       text: "Faizan demonstrated exceptional technical skills during the hackathon. His understanding of cybersecurity concepts was impressive.",
-      author: "Ahmed Khan",
-      position: "Coding Competition Judge",
-      avatar: "https://i.pravatar.cc/150?img=11"
+      author: "Junaid Mughal",
+      position: "Senior Developer",
+      avatar: junaidAvatar
     },
     {
-      text: "Working with Faizan was a pleasure. He's very knowledgeable about backend development and always delivered quality work.",
-      author: "Zahra Malik",
-      position: "Dev Blends, Project Manager",
-      avatar: "https://i.pravatar.cc/150?img=32"
-    },
-    {
-      text: "One of the most dedicated students I've mentored. Faizan has a natural talent for problem-solving and a passion for learning.",
-      author: "Dr. Usman Ali",
-      position: "FAST-NUCES, Professor",
-      avatar: "https://i.pravatar.cc/150?img=68"
+      text: "I'll definitely give you first priority in the future for any other interview opportunities that may come up!.",
+      author: "Ms. Alona King",
+      position: "Upwork, Software Engineer",
+      avatar: AKPNG
     }
   ];
 

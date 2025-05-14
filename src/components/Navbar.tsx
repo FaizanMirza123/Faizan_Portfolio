@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="text-white text-2xl font-bold">
-            <span className="text-electric">F</span>aizan
+            <span className="text-white">Faizan Saleh</span>
           </Link>
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
