@@ -18,6 +18,42 @@ const Projects = () => {
       description: "Internship project involving development of RESTful APIs and database management systems.",
       tech: ["Node.js", "Express", "MongoDB"],
       type: "Full Stack"
+    },
+    {
+      title: "Weather App",
+      description: "Built a self-hosted app where the database was hosted on an online personal computer using MSSQL.",
+      tech: ["Java", "MSSQL", "Server Hosting"],
+      type: "Full Stack"
+    },
+    {
+      title: "Voting App",
+      description: "Developed a Tkinter GUI application and hosted its server, using a static IP to connect to a MySQL database.",
+      tech: ["Python", "Tkinter", "MySQL"],
+      type: "Desktop App"
+    },
+    {
+      title: "LESCO Billing System",
+      description: "The server used threading to handle multiple client IP connections via TCP socket programming.",
+      tech: ["Socket Programming", "Threading", "TCP/IP"],
+      type: "Networking"
+    },
+    {
+      title: "Voting System",
+      description: "Developed a desktop voting system in Python with a user-friendly Tkinter GUI, integrated with SQL Server.",
+      tech: ["Python", "Tkinter", "MSSQL"],
+      type: "Desktop App"
+    },
+    {
+      title: "Game Server Hosting",
+      description: "Hosted game servers, providing multiplayer experiences for users, ensuring robust server management for hosting games.",
+      tech: ["Server Management", "Networking", "Game Hosting"],
+      type: "Hosting"
+    },
+    {
+      title: "Enterprise Software Stress Testing",
+      description: "Performed enterprise-level stress testing using Apache JMeter to analyze application performance under high load conditions.",
+      tech: ["JMeter", "Performance Testing", "QA"],
+      type: "Testing"
     }
   ];
 
