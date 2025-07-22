@@ -15,7 +15,7 @@ const About = () => {
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-electric/20 rounded-full"></div>
             <div className="relative z-10 bg-gray-100 rounded-lg p-1">
               <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
+                src="https://custom-doodle.com/wp-content/uploads/doodle/auto-draft/oo-ee-a-e-a-cat-meme-doodle.gif 
                 alt="Software Engineer" 
                 className="w-full h-auto rounded-lg shadow-lg"
               />
