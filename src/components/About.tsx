@@ -73,7 +73,7 @@ const About = () => {
             </div>
             
             <a 
-              href="/resume.pdf" 
+              href="../../public/resume.pdf" 
               className="inline-flex items-center mt-6 text-electric hover:underline font-medium"
               target="_blank"
               rel="noopener noreferrer"
