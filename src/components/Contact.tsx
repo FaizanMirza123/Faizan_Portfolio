@@ -49,15 +49,25 @@ const Contact = () => {
             <div className="space-y-4 mb-8">
               <div>
                 <p className="text-sm text-gray-400">Email</p>
-                <p>l227925@lhr.nu.edu.pk</p>
+                <a href="mailto:faizanmirza4587@gmail.com" className="hover:text-electric transition-colors">
+                  faizanmirza4587@gmail.com
+                </a>
               </div>
               <div>
                 <p className="text-sm text-gray-400">Phone</p>
-                <p>+923009411439</p>
+                <a href="tel:+923009411439" className="hover:text-electric transition-colors">
+                  +92 300 9411439
+                </a>
               </div>
               <div>
                 <p className="text-sm text-gray-400">Location</p>
-                <p>Johar Town, Lahore 54000</p>
+                <p>Lahore, Pakistan</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Portfolio</p>
+                <a href="https://github.com/FaizanMirza123" target="_blank" rel="noopener noreferrer" className="hover:text-electric transition-colors">
+                  GitHub Portfolio
+                </a>
               </div>
             </div>
             

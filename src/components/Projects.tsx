@@ -1,73 +1,62 @@
 import { useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink, Sparkles, Rocket } from "lucide-react";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState<string>("All");
   
   const projects = [
     {
-      title: "Security Testing Platform",
-      description: "Developed a comprehensive platform for testing SQL injection, XSS vulnerabilities, and DDoS attacks in a controlled environment.",
-      tech: ["React", "Node.js", "Security Tools"],
-      type: "Security",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      title: "E-commerce Backend API",
+      description: "Full-featured REST API supporting admin and customer frontends with authentication, product management, order processing, and payment integration. Built with FastAPI and deployed with Docker.",
+      tech: ["FastAPI", "Docker", "PostgreSQL", "JWT", "Payment Integration"],
+      type: "Production",
+      link: "breevias.duckdns.org/docs",
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      featured: true
     },
     {
-      title: "AI Model Training System",
-      description: "Created and trained machine learning models for various applications, implementing neural networks and data analysis.",
-      tech: ["Python", "TensorFlow", "Data Analysis"],
-      type: "AI/ML",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      title: "Voice Agent Personal Assistant",
+      description: "Real-time voice processing API with WebSocket support for low-latency communication, speech-to-text integration, and context management using FastAPI.",
+      tech: ["FastAPI", "WebSocket", "Speech-to-Text", "Real-time Processing"],
+      type: "Production",
+      link: "fastapi123.duckdns.org/docs",
+      image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      featured: true
     },
     {
-      title: "Dev Blends CRUD Application",
-      description: "Internship project involving development of RESTful APIs and database management systems.",
-      tech: ["Node.js", "Express", "MongoDB"],
-      type: "Full Stack",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      title: "Shopify Inventory Analytics SaaS",
+      description: "Enterprise SaaS platform with real-time data processing and automated reorder suggestions for Shopify store management. Handles inventory analytics and provides actionable insights.",
+      tech: ["Express.js", "Real-time Analytics", "Shopify API", "MongoDB"],
+      type: "Production",
+      link: "benefab.duckdns.org/docs",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      featured: true
     },
     {
-      title: "Weather App",
-      description: "Built a self-hosted app where the database was hosted on an online personal computer using MSSQL.",
-      tech: ["Java", "MSSQL", "Server Hosting"],
-      type: "Full Stack",
-      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      title: "Voice Agent Admin Panel",
+      description: "Administrative dashboard for managing voice agent systems with concurrent request handling and optimized response times. Built for scalability and performance.",
+      tech: ["Node.js", "Express.js", "Admin Dashboard", "API Management"],
+      type: "Production",
+      link: "admin.employai.online/docs",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      featured: false
     },
     {
-      title: "Voting App",
-      description: "Developed a Tkinter GUI application and hosted its server, using a static IP to connect to a MySQL database.",
-      tech: ["Python", "Tkinter", "MySQL"],
-      type: "Desktop App",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      title: "RAG-based AI Chatbot",
+      description: "Currently implementing AI-powered chatbot using Retrieval-Augmented Generation with transformer models and vector databases for enhanced context understanding.",
+      tech: ["Python", "Transformers", "Vector DB", "RAG", "AI/ML"],
+      type: "In Progress",
+      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      featured: false
     },
     {
-      title: "LESCO Billing System",
-      description: "The server used threading to handle multiple client IP connections via TCP socket programming.",
-      tech: ["Socket Programming", "Threading", "TCP/IP"],
-      type: "Networking",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    },
-    {
-      title: "Voting System",
-      description: "Developed a desktop voting system in Python with a user-friendly Tkinter GUI, integrated with SQL Server.",
-      tech: ["Python", "Tkinter", "MSSQL"],
-      type: "Desktop App",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    },
-    {
-      title: "Game Server Hosting",
-      description: "Hosted game servers, providing multiplayer experiences for users, ensuring robust server management for hosting games.",
-      tech: ["Server Management", "Networking", "Game Hosting"],
-      type: "Hosting",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    },
-    {
-      title: "Enterprise Software Stress Testing",
-      description: "Performed enterprise-level stress testing using Apache JMeter to analyze application performance under high load conditions.",
-      tech: ["JMeter", "Performance Testing", "QA"],
-      type: "Testing",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      title: "RESTful API Endpoints - Dev Blends",
+      description: "Designed and implemented 10+ production-grade RESTful API endpoints with comprehensive testing via Postman, serving live database systems.",
+      tech: ["Express.js", "SQL", "Postman", "API Design"],
+      type: "Backend",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      featured: false
     }
   ];
 
@@ -84,23 +73,36 @@ const Projects = () => {
   const otherProjects = filteredProjects.slice(3);
 
   return (
-    <section id="projects" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-navy">Featured Projects</h2>
-        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          Here are some projects I've worked on. Each one has helped me grow as a developer and expand my skillset.
-        </p>
+    <section id="projects" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-20 right-10 w-96 h-96 bg-electric/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-electric/10 px-4 py-2 rounded-full mb-4">
+            <Rocket className="w-4 h-4 text-electric" />
+            <span className="text-electric font-semibold text-sm">Live Deployments & Projects</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-navy via-electric to-navy bg-clip-text text-transparent">
+            Key Projects & Deployments
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-electric to-cyan-500 mx-auto rounded-full"></div>
+          <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
+            Production-ready applications serving real users with measurable impact
+          </p>
+        </div>
         
         {/* Filter buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-16">
           {types.map((type) => (
             <button
               key={type}
               onClick={() => setActiveFilter(type)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-6 py-2.5 rounded-xl text-sm font-semibold transition-all transform hover:scale-105 ${
                 activeFilter === type
-                  ? "bg-electric text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-gradient-to-r from-electric to-cyan-500 text-white shadow-lg shadow-electric/30"
+                  : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
               }`}
             >
               {type}
@@ -109,34 +111,55 @@ const Projects = () => {
         </div>
 
         {/* Featured Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto">
           {featuredProjects.map((project) => (
-            <div key={project.title} className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col">
-              <div className="h-48 overflow-hidden">
+            <div key={project.title} className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full flex flex-col">
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-electric/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10"></div>
+              
+              <div className="relative h-56 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+                {project.link && (
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs font-semibold text-navy">Live</span>
+                  </div>
+                )}
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold text-electric bg-electric/10 rounded-full">
+              
+              <div className="p-6 flex flex-col flex-grow relative z-20">
+                <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold text-electric bg-electric/10 rounded-full self-start">
                   {project.type}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-navy group-hover:text-electric transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-navy group-hover:text-electric transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-700 mb-4 flex-grow">{project.description}</p>
+                <p className="text-gray-600 mb-4 flex-grow leading-relaxed">{project.description}</p>
+                
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-full">
+                    <span key={tech} className="text-xs text-gray-600 bg-gray-100 px-3 py-1 rounded-full font-medium">
                       {tech}
                     </span>
                   ))}
                 </div>
-                <button className="text-electric font-medium flex items-center text-sm hover:underline mt-auto">
-                  View Project <ArrowRight size={16} className="ml-1" />
-                </button>
+                
+                {project.link && (
+                  <a 
+                    href={`https://${project.link}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-electric font-semibold text-sm hover:gap-2 transition-all mt-auto group/link"
+                  >
+                    View Live Project 
+                    <ExternalLink size={16} className="ml-1 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                  </a>
+                )}
               </div>
             </div>
           ))}
